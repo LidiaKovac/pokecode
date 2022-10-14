@@ -1,0 +1,48 @@
+@charset "UTF-8";
+nav.navbar * {
+  font-weight: bold;
+}
+nav.navbar * a span {
+  color: white !important;
+}
+nav.navbar * ul li:nth-of-type(odd) * {
+  color: black !important;
+}
+nav.navbar * ul li:nth-of-type(even) * {
+  color: white !important;
+}
+
+.pagination .page-link {
+  color: black;
+  font-weight: bold;
+}
+.pagination .page-link.active {
+  background-color: red;
+  border-color: red;
+  color: white;
+}
+
+h5 {
+  text-transform: capitalize;
+}
+
+#p-gen {
+  text-transform: uppercase;
+}
+
+.container .card .abilities {
+  text-transform: capitalize;
+}
+.container .card .abilities .single-ab::before {
+  content: "⭕";
+}
+.container .card .abilities .single-ab button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-weight: bold;
+  text-decoration: underline red;
+  text-transform: inherit;
+}
+
+/*# sourceMappingURL=index.css.map */

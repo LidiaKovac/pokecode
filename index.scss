@@ -1,0 +1,61 @@
+nav.navbar * {
+    font-weight: bold;
+
+    a {
+        span {
+            color: white !important
+        }
+    }
+
+    ul {
+        li:nth-of-type(odd) * {
+            color: black !important
+        }
+
+        li:nth-of-type(even) * {
+            color: white !important
+        }
+    }
+}
+
+.pagination {
+    .page-link {
+        color: black;
+        font-weight: bold;
+        &.active {
+            background-color: red;
+            border-color: red;
+            color: white
+        }
+    }
+}
+h5 {
+    text-transform: capitalize;
+}
+#p-gen {
+    text-transform: uppercase;
+}
+.container {
+    .card {
+        
+
+
+        .abilities {
+            .single-ab {
+                &::before {
+                    content: "⭕";
+                }
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: black;
+                    font-weight: bold;
+                    text-decoration:underline red;
+                    text-transform: inherit
+                }
+            }
+
+            text-transform: capitalize;
+        }
+    }
+}
