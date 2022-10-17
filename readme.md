@@ -5,4 +5,6 @@ In ogni caso, un paio di parole sul SASS:
 
 Ho usato sia mixins che variabili per evitare di ripetermi. Se ho un po' di tempo durante le pause a pranzo vi metto anche una "dark mode". 
 
+Ho anche usato ::before per aggiungere delle pokeball prima di ogni link :) 
+
 Se voleste smanettare con il SASS, il comando per compilare è `npm run watch-sass`
