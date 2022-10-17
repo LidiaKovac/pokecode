@@ -1,0 +1,20 @@
+{
+  "name": "pokecode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-sass": "sass ./scss/index.scss ./css/index.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LidiaKovac/pokecode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LidiaKovac/pokecode/issues"
+  },
+  "homepage": "https://github.com/LidiaKovac/pokecode#readme"
+}

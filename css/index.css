@@ -30,6 +30,10 @@ h5 {
   text-transform: uppercase;
 }
 
+.container .card {
+  height: 500px;
+  margin-bottom: 10px;
+}
 .container .card .abilities {
   text-transform: capitalize;
 }
