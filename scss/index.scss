@@ -1,3 +1,7 @@
+@import "./colors";
+@import "./mixins";
+
+
 nav.navbar * {
     font-weight: bold;
 
@@ -22,41 +26,52 @@ nav.navbar * {
     .page-link {
         color: black;
         font-weight: bold;
+
         &.active {
-            background-color: red;
-            border-color: red;
+            background-color: $pkmn-red;
+            border-color: $pkmn-red;
             color: white
         }
     }
 }
+
 h5 {
-    text-transform: capitalize;
+    @include first-letter-upper
 }
+
 #p-gen {
-    text-transform: uppercase;
+    @include first-letter-upper
 }
+
 .container {
     .card {
-        
+
         height: 500px;
         margin-bottom: 10px;
 
         .abilities {
             .single-ab {
                 &::before {
-                    content: "⭕";
+                    background-image: url("../assets/pokeball.png");
+                    background-size: 100% 100%;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    content: "";
+                    display: inline-block;
                 }
+
                 button {
                     background-color: transparent;
                     border: none;
                     color: black;
                     font-weight: bold;
-                    text-decoration:underline red;
+                    text-decoration: underline $pkmn-red;
                     text-transform: inherit
                 }
             }
 
-            text-transform: capitalize;
+            @include first-letter-upper
         }
     }
 }

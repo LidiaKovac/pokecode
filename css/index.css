@@ -1,4 +1,3 @@
-@charset "UTF-8";
 nav.navbar * {
   font-weight: bold;
 }
@@ -17,36 +16,42 @@ nav.navbar * ul li:nth-of-type(even) * {
   font-weight: bold;
 }
 .pagination .page-link.active {
-  background-color: red;
-  border-color: red;
+  background-color: #FF1C1C;
+  border-color: #FF1C1C;
   color: white;
 }
 
-h5 {
+h5:first-letter {
   text-transform: capitalize;
 }
 
-#p-gen {
-  text-transform: uppercase;
+#p-gen:first-letter {
+  text-transform: capitalize;
 }
 
 .container .card {
   height: 500px;
   margin-bottom: 10px;
 }
-.container .card .abilities {
-  text-transform: capitalize;
-}
 .container .card .abilities .single-ab::before {
-  content: "⭕";
+  background-image: url("../assets/pokeball.png");
+  background-size: 100% 100%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  content: "";
+  display: inline-block;
 }
 .container .card .abilities .single-ab button {
   background-color: transparent;
   border: none;
   color: black;
   font-weight: bold;
-  text-decoration: underline red;
+  text-decoration: underline #FF1C1C;
   text-transform: inherit;
+}
+.container .card .abilities:first-letter {
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=index.css.map */

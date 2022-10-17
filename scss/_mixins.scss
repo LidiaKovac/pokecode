@@ -1,0 +1,5 @@
+@mixin first-letter-upper {
+    &:first-letter {
+        text-transform: capitalize;
+    }
+}
