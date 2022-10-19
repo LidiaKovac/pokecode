@@ -7,11 +7,12 @@
 
 //vogliamo lavorare per classi
 class Pokemon {
-  constructor(name, abilities, img, imgShiny) {
+  constructor(name, abilities, img, imgShiny, id) {
     this.name = name;
     this.abilities = abilities;
     this.img = img; //string
     this.imgShiny = imgShiny; //string
+    this.id = id;
   }
 }
 
@@ -82,7 +83,13 @@ class Pokedex {
         let single = await resDet.json();
 
         //qui abbiamo i dati del pokemon
-        let nuovoPokemon = new Pokemon(single.name, single.abilities, single.sprites.other.home.front_default, single.sprites.other.home.front_shiny);
+        let nuovoPokemon = new Pokemon(
+          single.name,
+          single.abilities,
+          single.sprites.other.home.front_default,
+          single.sprites.other.home.front_shiny,
+          single.id
+        );
         this.allPkmn.push(nuovoPokemon);
       }
       // .finally(()=> {})
@@ -108,6 +115,7 @@ class Pokedex {
 
         */
     let cards = this.allPkmn.map((pkmn) => {
+      console.log(pkmn);
       return `<div class="col col-3">
                     <div class="card" >
                         <img src="${pkmn.img}" class="card-img-top" alt="pokemon image ${pkmn.name}">
@@ -120,6 +128,7 @@ class Pokedex {
                               })
                               .join("")}
                         </div>
+                        <a class='btn btn-danger' href='/details.html?pokemon=${pkmn.id}'> See details </a>
                         </div>
                     </div>
                 </div>`;
@@ -161,12 +170,32 @@ class Pokedex {
     //                  </div>`;
     // });
   }
+  searchByQuery(eventoTastiera) {
+    //prendiamo tutte le card
+    let tuttiIPokemon = document.querySelectorAll(".card-title");
+    tuttiIPokemon.forEach((pkmn) => {
+      console.log(pkmn.parentElement.parentElement.parentElement)
+      if (pkmn.innerHTML.toLowerCase().includes(eventoTastiera.target.value.toLowerCase())) {
+        pkmn.parentElement.parentElement.parentElement.style.display = "block";
+      } else {
+        pkmn.parentElement.parentElement.parentElement.style.display = "none";
+      }
+    });
+    //per ogni card, controlliamo se il nome include il valore dell'evento
+    //se NON lo include, nascondiamo la card
+  }
 }
 
 window.onload = async () => {
   let pokedex = new Pokedex();
   await pokedex.getAll();
-  await pokedex.renderAll();
+  pokedex.renderAll();
+  let input = document.querySelector("input[type='text']")
+  // input.addEventListener("keyup", pokedex.searchByQuery)
+  input.addEventListener("keyup", (event)=> {
+    pokedex.searchByQuery(event)
+  })
+  
   // pagina dettagli del pokemon
   // search
 };
